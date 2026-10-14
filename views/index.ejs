@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sach nguoi dung</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh Sach Nguoi dung</h1>
+        <a href="/add">Them nguoi dung moi</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ten</th>
+                    <th>Email</th>
+                    <th>Tuoi</th>
+                    <th>Dia Chi</th>
+                    <th>Hanh Dong</th>
+                </tr>
+            </thead>
+            <body>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.age %></td>
+                        <td><%= user.address %></td>
+                        <td>
+                            <a href="/edit/<%= user.id %>">Chinh sua</a>
+                            <a href="/delete/<%= user.id %>" 
+                                onclick="return confirm('Ban co chac chan muon xoa nguoi dung nay ?');">Xoa</a>
+
+                        </td>
+                    </tr>
+                <% }) %>
+            </body>
+        </table>
+    </div>
+</body>
+</html>

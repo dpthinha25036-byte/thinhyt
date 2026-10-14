@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinh sua nguoi dung</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chinh sua thong tin nguoi dung</h1>
+        <form action="/edit/<%= user.id %>" method="POST">
+            <label for="name">Ten:</label>
+            <input type="text" name="name" id="name" value="<%= user.name %>" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="<%= user.email %>" required>
+            <label for="age">Tuoi:</label>
+            <input type="number" name="age" id="age" value="<%= user.age %>" required>
+            <label for="address">Dia Chi:</label>
+            <input type="text" name="address" id="address" value="<%= user.address %>" required>
+            <button>Cap Nhat</button>
+        </form>
+        <a href="/">Quay lai danh sach nguoi dung</a>
+    </div>
+</body>
+</html>
